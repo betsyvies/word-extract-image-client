@@ -1,3 +1,5 @@
+import divElement from './components/form.js'
+
 const imgCabify = document.getElementById('imgCabify');
 
 imgCabify.addEventListener('change', (event) => {
@@ -15,10 +17,18 @@ imgCabify.addEventListener('change', (event) => {
       }
     })
     .then(response => response.json())
-    .then(console.log)
+    .then(getData)
     .catch(error => console.error('Error:', error))
   }, false);
   if (file) {
     reader.readAsDataURL(file);
   }
 });
+
+const getData = (obj) => {
+  const formElement = document.getElementById('root')
+  formElement.innerHTML = '';
+  obj.data.forEach(elem => {
+    formElement.appendChild(divElement(elem));
+  });
+}
