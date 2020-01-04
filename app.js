@@ -1,6 +1,20 @@
-import divElement from './components/form.js'
+const divElement = (data) => {
+  console.log(data)
+  const divElem = document.createElement('div');
+  divElem.classList.add('margin-1');
+  divElem.innerHTML = `
+      <div class="margin-05">
+      <label for="priceLite">Precio Estimado ${data.category}</label>
+      <input type="text" name="priceLite" value=${data.price}>
+      </div>
+      <div class="margin-05">
+      <label for="timeLite">Tiempo Estimado de llegada ${data.category} (Minutos)</label>
+      <input type="text" name="timeLite" value=${data.time}>
+      </div>`
+  return divElem;
+}
 
-const imgCabify = document.getElementById('imgCabify');
+const imgCabify = document.getElementById('imgFile');
 
 imgCabify.addEventListener('change', (event) => {
   const file = event.target.files[0];
@@ -32,3 +46,45 @@ const getData = (obj) => {
     formElement.appendChild(divElement(elem));
   });
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*import appForm from './container/appForm.js';
+
+const initialState = {
+  name: undefined,
+  currentCategory: undefined,
+  currentQuestion: 0,
+  answers: {},
+  categories,
+};
+
+export const getData = (obj) => {
+  const divElement = document.getElementById('root')
+  divElement.innerHTML = '';
+  divElement.appendChild(appForm(obj));
+}
+
+getData(initialState) */
+
