@@ -1,3 +1,15 @@
+import { addElem } from './form.js';
+
+const previewImage = (reader) => {
+  let preview = document.createElement('div'),
+  image = document.createElement('img');
+  image.classList.add('preview-image');
+  image.src = reader.result;
+  preview.innerHTML = '';
+  preview.append(image);
+  return preview;
+};
+
 export default () => {
   const inputFileElem = document.createElement('input');
   inputFileElem.setAttribute('type', 'file');
@@ -16,7 +28,13 @@ export default () => {
         }
       })
       .then(response => response.json())
-      .then(getData)
+      .then(data => {
+        console.log(data)
+        const formElement = event.target.parentNode.querySelector('form');
+        formElement.innerHTML = '';
+        addElem(formElement, data.data)
+        event.target.parentNode.appendChild(previewImage(reader));
+      })
       .catch(error => console.error('Error:', error))
     }, false);
     if (file) {
