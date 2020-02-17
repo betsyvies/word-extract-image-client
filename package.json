@@ -1,0 +1,28 @@
+{
+  "name": "freelo-client",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/betsyvies/word-extract-image-client.git"
+  },
+  "author": "Betsy Vidal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/betsyvies/word-extract-image-client/issues"
+  },
+  "homepage": "https://github.com/betsyvies/word-extract-image-client#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.4",
+    "@babel/plugin-transform-modules-commonjs": "^7.8.3",
+    "babel-core": "^7.0.0-bridge.0"
+  },
+  "dependencies": {
+    "redux": "^4.0.5"
+  }
+}
